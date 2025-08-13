@@ -18,6 +18,6 @@ end ISA;
 architecture Behavioral of ISA is
 
 begin
-z <= (((a and b) or b) and d) ;
+z <= ((((a and b) or b) or (b or c)) and d) ;
 
 end Behavioral;
