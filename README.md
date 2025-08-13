@@ -47,3 +47,13 @@ em nível lógico alto).
 
 Clock implementado independentemente por termo produto
 – clock oriundo das macrocells ou de pinos de I/O.
+
+## FPGA
+São dispositivos programáveis que possuem uma arquitetura baseada em blocos lógicos configuráveis, chamados de CLB (Configuration Logical Blocks)
+-> CLBs são formados por estruturas chamadas de blocos de entrada e saída (IOB - In/Out Blocks), os quais são responsáveis pela interface das saídas provenientes das combinações de CLBs.
+-> Uma FPGA usa Blocos Lógicos reconfiguráveis
+-> Os bits de configuração são selecionados de acordo com a função lógica desejada.
+-> A configuração é uma tabela da verdade (lookup table) da funcionalidade
+-> A FPGA pode implementar lógica puramente combinacional ou sequencial, ou seja, que faz uso de flip-flops.
+-> LUTs = Look Up Tables
+As LUTs podem ser programadas para qualquer tipo de porta necessária ao projeto. Há um número finito de LUTs em uma FPGA.
