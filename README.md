@@ -23,3 +23,12 @@ Família 7000 – densidade entre 150 e 5.000 portas equivalentes; de 44 a 208 p
 8000 densidade 2.500 a 24.000 portas equivalentes.
 10k – densidade de até 250.000 portas equivalentes.
 APEX 20k – densidade de até 1.500.000 portas equivalentes.
+
+* Macrocell MAX 7000
+Características da matriz de termo produto.
+
+-> Fornece sinais de entrada par porta OR e XOR (Funções lógicas e inversão lógica).
+
+-> Entradas secundárias para entradas de controle do flip-flop (clock, enable, clear, preset).
+
+-> Um termo produto pode ser invertido e realimentado para qualquer entrada de uma nova matriz de termo produto de qualquer macrocell dentro da LAB.
