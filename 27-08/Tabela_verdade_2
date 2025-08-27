@@ -1,0 +1,43 @@
+library IEEE;                       
+use IEEE.STD_LOGIC_1164.ALL;         -- Biblioteca para tipos lógicos (std_logic)
+use IEEE.NUMERIC_STD.ALL;            -- Biblioteca para conversão/uso de inteiros
+
+-- Definição da entidade (as entradas e saídas do circuito)
+entity ex1 is
+    Port (
+        a : in integer range 0 to 15;   -- Entrada: número inteiro de 0 a 15 (pode vir de 4 switches, por exemplo)
+        s : out integer range 0 to 3;   -- Saída: inteiro de 0 a 3
+        b : out std_logic               -- Saída: sinal lógico ('0' ou '1')
+    );
+end ex1;
+
+-- Arquitetura: descreve o comportamento da entidade
+architecture Behavioral of ex1 is
+begin
+
+    -------------------------------------------------------------------------
+    -- Mapeamento da saída "s" em função do valor de "a"
+    -- O comando "with a select" funciona como um "case" (ou uma tabela verdade)
+    -------------------------------------------------------------------------
+    with a select
+        s <= 3 when 0,      -- Se a = 0, s recebe 3
+             3 when 3,      -- Se a = 3, s recebe 3
+             1 when 4,      -- Se a = 4, s recebe 1
+             1 when 5,      -- Se a = 5, s recebe 1
+             0 when 6,      -- Se a = 6, s recebe 0
+             1 when 7,      -- Se a = 7, s recebe 1
+             1 when 9,      -- Se a = 9, s recebe 1
+             3 when 10,     -- Se a = 10, s recebe 3
+             1 when 11,     -- Se a = 11, s recebe 1
+             3 when 13,     -- Se a = 13, s recebe 3
+             1 when 15,     -- Se a = 15, s recebe 1
+             2 when others; -- Para qualquer outro valor de a (1,2,8,12,14) → s recebe 2
+
+    -------------------------------------------------------------------------
+    -- Mapeamento da saída "b" em função do valor de "a"
+    -------------------------------------------------------------------------
+    with a select
+        b <= '0' when 4 | 5 | 6,  -- Se a for 4, 5 ou 6, b = '0'
+             '1' when others;     -- Caso contrário, b = '1'
+
+end Behavioral;
