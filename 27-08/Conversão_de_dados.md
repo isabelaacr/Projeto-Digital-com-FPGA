@@ -24,6 +24,7 @@ y <= long(2*x + 5);
 
 Example: Data conversion
 
+```VHDL
 LIBRARY ieee:
 
 USE ieee.std logic 1164.all:
@@ -35,7 +36,9 @@ SIGNAL y: OUT STD LOGIC VECTOR (7 DOWNTO 0);
 
 y <= CONV_STD_LOGIC VECTOR ((a4b),8);
 -- Legal operation: a+b is converted from UNSIGNED to an 8-bit STD LOGIC VECTOR value, then assigned to y.
+```
 
 Exemplo de soma.
+```VHDL
 
 
