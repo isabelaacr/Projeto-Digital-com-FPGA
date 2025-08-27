@@ -31,8 +31,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Baggio is
     Port ( abcd : in  STD_LOGIC_VECTOR (3 downto 0);
-           s1 : out  STD_LOGIC_VECTOR (0 downto 0);
-           s2 : out  STD_LOGIC_VECTOR (0 downto 0));
+           s1 : out  STD_LOGIC;
+           s2 : out  STD_LOGIC);
 end Baggio;
 
 architecture Behavioral of Baggio is
