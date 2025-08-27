@@ -19,3 +19,23 @@ y <= long(2*x + 5);
 | Conv_unsigned(p, b)         | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | UNSIGNED com b bits          | b indica o tamanho do vetor de saída                                       |
 | Conv_signed(p, b)           | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | SIGNED com b bits            | b indica o tamanho do vetor de saída                                       |
 | Conv_std_logic_vector(p, b) | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | STD_LOGIC_VECTOR com b bits  | b indica o tamanho do vetor de saída                                       |
+
+
+
+Example: Data conversion
+
+LIBRARY ieee:
+
+USE ieee.std logic 1164.all:
+USE ieee.std logic arith.all:
+
+SIGNAL a: IN UNSIGNED (7 DOWNTO 0);
+SIGNAL b: IN UNSIGNED (7 DOWNTO 0);
+SIGNAL y: OUT STD LOGIC VECTOR (7 DOWNTO 0);
+
+y <= CONV_STD_LOGIC VECTOR ((a4b),8);
+-- Legal operation: a+b is converted from UNSIGNED to an 8-bit STD LOGIC VECTOR value, then assigned to y.
+
+Exemplo de soma.
+
+
