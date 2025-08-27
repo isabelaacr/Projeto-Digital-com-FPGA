@@ -12,3 +12,10 @@ SIGNAL y: long;
 
 y <= long(2*x + 5);
 ```
+
+| Função                      | Entrada aceita                           | Saída                        | Observação                                                                 |
+|-----------------------------|------------------------------------------|------------------------------|----------------------------------------------------------------------------|
+| Conv_integer(p)             | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | INTEGER                      | Não aceita STD_LOGIC_VECTOR como entrada                                   |
+| Conv_unsigned(p, b)         | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | UNSIGNED com b bits          | b indica o tamanho do vetor de saída                                       |
+| Conv_signed(p, b)           | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | SIGNED com b bits            | b indica o tamanho do vetor de saída                                       |
+| Conv_std_logic_vector(p, b) | INTEGER, UNSIGNED, SIGNED, STD_ULOGIC    | STD_LOGIC_VECTOR com b bits  | b indica o tamanho do vetor de saída                                       |
