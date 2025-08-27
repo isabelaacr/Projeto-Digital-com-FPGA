@@ -41,4 +41,53 @@ y <= CONV_STD_LOGIC VECTOR ((a4b),8);
 Exemplo de soma.
 ```VHDL
 
+library IEEE;
+use IEEE.STD LOGIC 1164.all;
+USE ieee.std logic arith.ALL;
+
+entity soma is
+port (
+a : in unsigned (7 downto 0);
+b: in unsigned(7 downto 0);
+c : out unsigned (8 downto 0)
+)
+end soma:
+
+architecture arg soma of soma is
+begin
+p: process (a, b)
+begin
+ c <= ('0' & a) + b
+
+-- sinal de concatenação
+
+end process;
+end arq soma;
+```
+
+Outro cxemplo de soma:
+
+
+-- Solution 2: out=INTEGER
+LIBRARY ieee;
+
+USE ieee.std logic 1164.all;
+USE ieee.std logic arith.all;
+
+
+ENTITY adder2 IS
+PORT ( a, b : IN SIGNED (3 DOWNTO O);
+sum : OUT INTEGER RANGE -16 TO 15);
+
+END adder2:
+
+
+ARCHITECTURE adder2 oF adder2 IS
+BEGIN
+
+sum <= CONV INTEGER (a + b);
+END adder2:
+
+
+
 
