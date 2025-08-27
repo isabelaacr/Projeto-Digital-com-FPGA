@@ -65,9 +65,9 @@ end process;
 end arq soma;
 ```
 
-Outro cxemplo de soma:
+Outro exemplo de soma:
 
-
+```VHDL
 -- Solution 2: out=INTEGER
 LIBRARY ieee;
 
@@ -87,7 +87,19 @@ BEGIN
 
 sum <= CONV INTEGER (a + b);
 END adder2:
+```
 
+Alguns pacotes foram criados pela ieee, para permitir operações lógicas com std_logic.
 
+```VHDL
+LIBRARY ieee;
+USE ieee.std_logic.all;
+USE ieee.std_logic_unsigned.all;
 
+SIGNAL a: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+SIGNAL b: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+SIGNAL x: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
 
+v <= a +b ;
+w <= a AND b;
+```
