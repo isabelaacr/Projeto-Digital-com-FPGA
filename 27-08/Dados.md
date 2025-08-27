@@ -22,3 +22,24 @@ Pacote sd_logic_arith da biblioteca ieee.
 | `TRUE`               | Booleano                                  |
 | `1.2E-5`             | Real (não sintetizável)                   |
 | `after 10 ns`        | Atraso físico (não sintetizável)          |
+
+## Operadores
+São usados para atribuir valores a sinais, variáveis e constantes.
+
+
+
+
+| Operador      | Descrição                                 |
+|----------------------|-------------------------------------------|
+| <=               | é usado para atribuir valor a SIGNAL               |
+| :=        | é usado para atribuir valor a VARIABLE, CONSTANT ou GENERIC. É usado também para definir valores iniciais. |
+| =>         | é usado para atribuir valores individuais a elementos de vetor oo com OTHERS                     |
+| +             | Adição                        |
+| -              | Subtração                 |
+| *             | Multiplicação                    |
+| **             | Exponenciação                 |
+| /               | Divisão                                 |
+| MOD             | Módulo                   |
+| REM        | Resto          |
+| ABS        | Valor absoluto          |
+
