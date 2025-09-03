@@ -2,6 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+
+-- Ler dois números e mostrar num display de 7 segmentos mostrando o maior 
+
 -- Entidade principal
 entity comp is
     port (
