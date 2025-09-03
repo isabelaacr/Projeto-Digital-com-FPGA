@@ -21,14 +21,13 @@ begin
 end Behavioral;
 
 -- Test Bench:
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity Circuito is
-end Circuito;
+entity testbench_Circuito is
+end testbench_Circuito;
 
-architecture behavior of Circuito is
+architecture behavior of testbench_Circuito is
 	-- Componente a ser testado
 	component Circuito
     	Port (
