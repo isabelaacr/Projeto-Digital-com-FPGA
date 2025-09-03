@@ -1,59 +1,30 @@
-3 de set 15:27
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
-(P.2013101))-/home/aluno/Bagglo/dlsp_component/disp_componentxise-[principal.vhd*]
-rvigator
-pools WIndom Layout delp
-2 library IEEE;
-use IEEE.STD LOGIC 1164.ALL;
-3
-4
-5 entity principal is
-Port ( numero : in integer range 0 to 9;
-STD_LOGIC_vector(6 downto 0);
-6
-d: out
-STD_LOGIC_vector(3 downto 0)
-7
-sel : out
-8
-9
-)
-10 end principal;
-11
-12
-1s architecture Behavloral of principal is
-13
+entity principal is
+    Port (
+        numero : in integer range 0 to 9;
+        d      : out STD_LOGIC_VECTOR(6 downto 0);
+        sel    : out STD_LOGIC_VECTOR(3 downto 0)
+    );
+end principal;
 
-16 component disp
-Port (n: in integer range 0 to 9;
-d: out STD_LOGIC_vector (6 downto 0)
-))
-end component;
+architecture Behavioral of principal is
 
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
+    component disp
+        Port (
+            n : in integer range 0 to 9;
+            d : out STD_LOGIC_VECTOR(6 downto 0)
+        );
+    end component;
 
 begin
 
-sel <= "1110")
-ul: disp port map(numero, d);
-end Behavioral,
+    sel <= "1110";
 
-prinopal.vhd"
+    ul: disp port map (
+        n => numero,
+        d => d
+    );
 
-Design Summary
-
-disp.vhd
-
-ta "/homa/a luna/tagg1o/disp_compenont/d1sp.vhd" into Llbrary work
-tchy complstad succassfully,
-
+end Behavioral;
