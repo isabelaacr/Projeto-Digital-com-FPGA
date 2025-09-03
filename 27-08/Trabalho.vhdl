@@ -25,10 +25,10 @@ end Behavioral;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity tb_Circuito is
-end tb_Circuito;
+entity Circuito is
+end Circuito;
 
-architecture behavior of tb_Circuito is
+architecture behavior of Circuito is
 	-- Componente a ser testado
 	component Circuito
     	Port (
