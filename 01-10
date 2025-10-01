@@ -1,0 +1,70 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity contador_display is
+    Port ( clk       : in  STD_LOGIC; -- clock da placa
+           btn_up    : in  STD_LOGIC;
+           btn_down  : in  STD_LOGIC;
+           btn_left  : in  STD_LOGIC;
+           btn_right : in  STD_LOGIC;
+           seg       : out STD_LOGIC_VECTOR (6 downto 0); -- a..g
+           an        : out STD_LOGIC_VECTOR (3 downto 0)  -- seleção do display
+         );
+end contador_display;
+
+architecture Behavioral of contador_display is
+    signal cont : integer range 0 to 9 := 0;
+    signal display_on : STD_LOGIC := '1';
+    signal seg_int : STD_LOGIC_VECTOR(6 downto 0);
+begin
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if btn_up = '1' then
+                if cont = 9 then
+                    cont <= 0;
+                else
+                    cont <= cont + 1;
+                end if;
+            elsif btn_down = '1' then
+                if cont = 0 then
+                    cont <= 9;
+                else
+                    cont <= cont - 1;
+                end if;
+            elsif btn_left = '1' then
+                cont <= 0;
+            end if;
+
+            if btn_right = '1' then
+                display_on <= not display_on;
+            end if;
+        end if;
+    end process;
+
+    -- Decodificador 7 segmentos (ânodo comum → '0' acende)
+    process(cont)
+    begin
+        case cont is
+            when 0 => seg_int <= "0000001"; -- 0
+            when 1 => seg_int <= "1001111"; -- 1
+            when 2 => seg_int <= "0010010"; -- 2
+            when 3 => seg_int <= "0000110"; -- 3
+            when 4 => seg_int <= "1001100"; -- 4
+            when 5 => seg_int <= "0100100"; -- 5
+            when 6 => seg_int <= "0100000"; -- 6
+            when 7 => seg_int <= "0001111"; -- 7
+            when 8 => seg_int <= "0000000"; -- 8
+            when 9 => seg_int <= "0000100"; -- 9
+            when others => seg_int <= "1111111"; -- apagado
+        end case;
+    end process;
+
+    -- Saída
+    seg <= seg_int when display_on = '1' else "1111111";
+    an  <= "1110"; -- habilita só o display 0 (AN0 ligado, ânodo comum = '0')
+
+end Behavioral;
