@@ -1,23 +1,24 @@
-# Clock 50MHz
-NET "clk" LOC = "C9" | IOSTANDARD = LVCMOS33;
+# Clock (exemplo: entrada de 50 MHz no pino P85, confirmar no esquemático da placa)
+NET "clk" LOC = "P85";
 
-# Botões
-NET "btn_up"    LOC = "D18" | IOSTANDARD = LVCMOS33;  # BTN0
-NET "btn_down"  LOC = "E18" | IOSTANDARD = LVCMOS33;  # BTN1
-NET "btn_left"  LOC = "F18" | IOSTANDARD = LVCMOS33;  # BTN2
-NET "btn_right" LOC = "H13" | IOSTANDARD = LVCMOS33;  # BTN3
+# Botões (troque pelos pinos que você realmente conectou)
+NET "btn_up"    LOC = "P34";
+NET "btn_down"  LOC = "P35";
+NET "btn_left"  LOC = "P36";
+NET "btn_right" LOC = "P37";
 
-# Segmentos display de 7 seg (ânodo comum)
-NET "seg[0]" LOC = "L14" | IOSTANDARD = LVCMOS33;  # a
-NET "seg[1]" LOC = "H12" | IOSTANDARD = LVCMOS33;  # b
-NET "seg[2]" LOC = "N14" | IOSTANDARD = LVCMOS33;  # c
-NET "seg[3]" LOC = "N11" | IOSTANDARD = LVCMOS33;  # d
-NET "seg[4]" LOC = "P12" | IOSTANDARD = LVCMOS33;  # e
-NET "seg[5]" LOC = "L13" | IOSTANDARD = LVCMOS33;  # f
-NET "seg[6]" LOC = "M12" | IOSTANDARD = LVCMOS33;  # g
+# Display 7 segmentos (segmentos a..g)
+NET "seg[0]" LOC = "N21";  # a
+NET "seg[1]" LOC = "N22";  # b
+NET "seg[2]" LOC = "N23";  # c
+NET "seg[3]" LOC = "N24";  # d
+NET "seg[4]" LOC = "N25";  # e
+NET "seg[5]" LOC = "N26";  # f
+NET "seg[6]" LOC = "N27";  # g
 
-# Seleção dos displays (AN0–AN3)
-NET "an[0]" LOC = "K13" | IOSTANDARD = LVCMOS33;  # AN0
-NET "an[1]" LOC = "M13" | IOSTANDARD = LVCMOS33;  # AN1
-NET "an[2]" LOC = "P13" | IOSTANDARD = LVCMOS33;  # AN2
-NET "an[3]" LOC = "L12" | IOSTANDARD = LVCMOS33;  # AN3
+# Seleção dos displays (AN0..AN3) 
+# Se usar só 1 display, ligue apenas AN0
+NET "an[0]" LOC = "M15";
+NET "an[1]" LOC = "M16";
+NET "an[2]" LOC = "L15";
+NET "an[3]" LOC = "L16";
