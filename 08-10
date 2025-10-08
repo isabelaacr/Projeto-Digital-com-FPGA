@@ -1,1 +1,34 @@
-.
+process(tclk)
+begin
+    if rising_edge(tclk) then
+        if entrada = '0' then
+            case estado is
+                when 'a' =>
+                    saida <= '1';
+                    estado <= 'b';
+                when 'b' =>
+                    saida <= '0';
+                    estado <= 'c';
+                when 'c' =>
+                    saida <= '1';
+                    estado <= 'a';
+                when others =>
+                    saida <= '0';
+            end case;
+        else -- entrada = '1'
+            case estado is
+                when 'a' =>
+                    saida <= '0';
+                    estado <= 'c';
+                when 'b' =>
+                    saida <= '1';
+                    estado <= 'a';
+                when 'c' =>
+                    saida <= '0';
+                    estado <= 'b';
+                when others =>
+                    saida <= '0';
+            end case;
+        end if;
+    end if;
+end process;
