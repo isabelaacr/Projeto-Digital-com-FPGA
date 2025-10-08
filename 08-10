@@ -1,41 +1,46 @@
-process(tclk)
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity maquina is
+    Port (
+        tclk    : in  STD_LOGIC;
+        entrada : in  STD_LOGIC;
+        saida   : out STD_LOGIC
+    );
+end maquina;
+
+architecture comportamento of maquina is
+    type tipo_estado is (a, b, c);
+    signal estado : tipo_estado := a;
 begin
-    if rising_edge(tclk) then
-        if entrada = '0' then
-            case estado is
-                when 'a' =>
-                    saida <= '1';
-                    estado <= 'b';
-
-                when 'b' =>
-                    saida <= '0';
-                    estado <= 'c';
-
-                when 'c' =>
-                    saida <= '1';
-                    estado <= 'a';
-
-                when others =>
-                    saida <= '0';
-            end case;
-
-        else  -- entrada = '1'
-            case estado is
-                when 'a' =>
-                    saida <= '0';
-                    estado <= 'c';
-
-                when 'b' =>
-                    saida <= '1';
-                    estado <= 'a';
-
-                when 'c' =>
-                    saida <= '0';
-                    estado <= 'b';
-
-                when others =>
-                    saida <= '0';
-            end case;
+    process(tclk)
+    begin
+        if rising_edge(tclk) then
+            if entrada = '0' then
+                case estado is
+                    when a =>
+                        saida <= '1';
+                        estado <= b;
+                    when b =>
+                        saida <= '0';
+                        estado <= c;
+                    when c =>
+                        saida <= '1';
+                        estado <= a;
+                end case;
+            else  -- entrada = '1'
+                case estado is
+                    when a =>
+                        saida <= '0';
+                        estado <= c;
+                    when b =>
+                        saida <= '1';
+                        estado <= a;
+                    when c =>
+                        saida <= '0';
+                        estado <= b;
+                end case;
+            end if;
         end if;
-    end if;
-end process;
+    end process;
+end comportamento;
