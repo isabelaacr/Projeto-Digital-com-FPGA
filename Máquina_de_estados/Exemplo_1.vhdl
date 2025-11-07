@@ -16,17 +16,17 @@ begin
     then
       case est is 
       when a => if entrada '0' then est <= b;
-                                saida <= 1;
+                                saida <= '1';
                               else est <= c;
                                 saida <= '1';
                 end if;
       when b => if entrada '0' then est <= a;
-                                saida <= 1;
+                                saida <= '1';
                               else est <= c;
                                 saida <= '1';
                 end if;
-      when b => if entrada '0' then est <= a;
-                                saida <= 1;
+      when others => if entrada '0' then est <= a;
+                                saida <= '1';
                               else est <= c;
                                 saida <= '1';
   end case;
